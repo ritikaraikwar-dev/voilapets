@@ -17,7 +17,7 @@ app.use(session({
 
 app.get('/', (req, res) => {
   console.log('Current session ID:', req.sessionID);
-  res.send('Session ID is ' + req.sessionID);
+  res.send('server started succesfully');
 });
 
  
@@ -35,7 +35,7 @@ app.use('/voilapets',route);
 
 
 app.listen(PORT,()=>{
-    console.log("server start");
+    console.log("server start on :",PORT);
 });
 
 app.get('/',(req,res)=>{
