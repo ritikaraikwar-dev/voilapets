@@ -17,7 +17,7 @@ app.use(session({
 
 app.get('/health', (req, res) => {
   console.log('Current session ID:', req.sessionID);
-  res.send('server started succesfully');
+  res.send('server started succesfullyaaa');
 });
 
  
