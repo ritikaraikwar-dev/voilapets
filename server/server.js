@@ -15,7 +15,7 @@ app.use(session({
   cookie: { secure: false }
 })) 
 
-app.get('/', (req, res) => {
+app.get('/health', (req, res) => {
   console.log('Current session ID:', req.sessionID);
   res.send('server started succesfully');
 });
