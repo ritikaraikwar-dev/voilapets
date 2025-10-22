@@ -1,9 +1,9 @@
-const User = require('../models/User');
+const Cart = require('../models/Cart');
+
+// api for add to cart 
 
 const addCart = async(req, res)=>{
     try{
- 
- 
     const sessionId = req.sessionID;
 
         const{id, title, price, image, color} =   req.body;
@@ -12,11 +12,11 @@ const addCart = async(req, res)=>{
       return res.status(400).json({ message: "Session ID missing" });
     }
              
-        const data = await User.create({id, title, price, image, color , session_id:sessionId});
+        const Cart = await Cart.create({id, title, price, image, color , session_id:sessionId});
 
         res.status(201).json({
             message:"data send successfully",
-            userData:data
+            userData:Cart
         })
     }
     catch(error){

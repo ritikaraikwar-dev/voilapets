@@ -19,7 +19,6 @@ export const CartProvider = ({ children }) => {
   const showCart = () => {
     setCart((prev) => !prev)
   }
- 
   const handleCart = async (id) => {
     try {
 

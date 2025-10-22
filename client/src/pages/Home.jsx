@@ -2,6 +2,7 @@ import Arrival from '../components/Arrival';
 import AsSeenSwiper from '../components/AsSeenSwiper';
 import Elegance from '../components/Elegance';
 import Feature from '../components/Feature';
+ 
 import Hero from '../components/Hero';
 import PetLoversSwiper from '../components/PetLoversSwiper';
 import Sealable from '../components/Sealable';

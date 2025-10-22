@@ -1,18 +1,18 @@
-const user = require("../models/User"); // Replace with your actual Cart model
+const user = require("../models/Cart"); // Replace with your actual Cart model
 
 const increment = async (req, res) => {
   try {
     const session_id = req.sessionID;
-    const { id } = req.body;
-console.log('Session ID:', session_id);
-console.log('Received ID:', id);
+    
+    console.log('Session ID:', session_id);
+    console.log('Received ID:', id);
     if (!session_id || !id) {
       return res.status(400).json({ message: "Missing session ID or product ID" });
     }
 
     const updatedItem = await user.findOneAndUpdate(
-      { session_id: session_id, id:id },  
-      { $inc: { quantity: 1 } },  
+      { session_id: session_id},
+      { $inc: { quantity: 1 } },
       { new: true }
     );
 

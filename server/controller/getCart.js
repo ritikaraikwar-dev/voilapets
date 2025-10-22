@@ -1,13 +1,15 @@
-const User = require('../models/User');
+const User = require('../models/Cart');
 
+// api for show cart 
 
 const getCart = async(req , res)=>{
 
      try{
-        
-     
         const sessionId = req.sessionID;
           const product = await User.find({ session_id: sessionId }); 
+
+          // if product is not in cart
+          
           if(!product){
            return res.status(300).json({
                 message:"product is not available in cart"

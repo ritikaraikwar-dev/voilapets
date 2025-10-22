@@ -1,4 +1,6 @@
-const User = require("../models/User");
+const Cart = require("../models/Cart");
+
+// api for delete cart 
 
 const deleteCart = async (req, res) => {
   try {
@@ -9,8 +11,9 @@ const deleteCart = async (req, res) => {
       return res.status(400).json({ message: "Session ID is missing" });
     }
 
-     
-    const deletedItem = await User.findOneAndDelete({
+     // find cart using id then delelte 
+
+    const Cart = await Cart.findOneAndDelete({
       _id: cartItemId,
       session_id: sessionId
     });
@@ -24,7 +27,8 @@ const deleteCart = async (req, res) => {
       deletedItem,
     });
 
-  } catch (error) {
+  } 
+  catch (error) {
     console.error("Error deleting cart item:", error);
     return res.status(500).json({
       message: "Internal server error",
