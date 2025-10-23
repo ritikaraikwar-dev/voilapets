@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 // schema for cart
-
 const cartSchema = new mongoose.Schema(
     {
         session_id:{

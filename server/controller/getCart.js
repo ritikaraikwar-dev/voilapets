@@ -5,8 +5,8 @@ const User = require('../models/Cart');
 const getCart = async(req , res)=>{
 
      try{
-        const sessionId = req.sessionID;
-          const product = await User.find({ session_id: sessionId }); 
+         
+          const userId = await User.find({ userId }); 
 
           // if product is not in cart
           
@@ -29,3 +29,6 @@ const getCart = async(req , res)=>{
 }
 
 module.exports = getCart;
+
+
+ 

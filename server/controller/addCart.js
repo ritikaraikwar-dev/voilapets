@@ -1,7 +1,5 @@
 const Cart = require('../models/Cart');
 
-// api for add to cart 
-
 const addCart = async(req, res)=>{
     try{
     const sessionId = req.sessionID;
@@ -28,3 +26,4 @@ const addCart = async(req, res)=>{
 }
 
 module.exports = addCart;
+
