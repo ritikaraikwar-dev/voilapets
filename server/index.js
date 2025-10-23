@@ -61,11 +61,14 @@ const route = require('./routes/route');
 const dbConnect = require('./config/dbConnect');
 
 const app = express();
-
-
- 
 const session = require('express-session');
-const MongoStore = require('connect-mongo');  // Assuming you imported this
+const MongoStore = require('connect-mongo');   
+
+app.options('*', cors({
+  origin: 'https://voilapets-frontend.vercel.app',
+  credentials: true,
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
 
 app.use(cors({
   origin: 'https://voilapets-frontend.vercel.app',
@@ -73,8 +76,6 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Preflight requests handler for all routes
-app.options('*', cors());
 
 app.use(express.json());
 
