@@ -67,13 +67,13 @@ const MongoStore = require('connect-mongo');
 app.options('*', cors({
   origin: 'https://voilapets-frontend.vercel.app',
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+ // allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 app.use(cors({
   origin: 'https://voilapets-frontend.vercel.app',
   credentials: true,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  // allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
 
